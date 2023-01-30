@@ -15,3 +15,13 @@ $sender->setSubject('Hello!');
 $sender->setMessage('Hello, how are you?');
 $sender->send();
 ```
+
+### Authors
+
+**Ramazan Çetinkaya**
+
+- [github/ramazancetinkaya](https://github.com/ramazancetinkaya)
+
+### License
+
+Copyright © 2023, [Ramazan Çetinkaya](https://github.com/ramazancetinkaya).
