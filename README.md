@@ -1,4 +1,4 @@
-# EmailSender
+# Email Sender
 Here's a sample email sending class using PHPMailer.
 
 This class uses PHPMailer library to send email. It has the ability to add CC and BCC recipients, as well as handle basic email elements such as the sender, recipient, subject, and message.
