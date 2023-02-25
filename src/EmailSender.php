@@ -107,8 +107,8 @@ class EmailSender {
 
             $mail->send();
             return true;
-    } catch (Exception $e) {
-        throw new Exception('Error sending email: ' . $mail->ErrorInfo);
+        } catch (Exception $e) {
+            throw new Exception('Error sending email: ' . $mail->ErrorInfo);
+        }
     }
-        
 }
