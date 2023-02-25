@@ -84,17 +84,17 @@ class EmailSender {
     public function send() : bool {
         $mail = new PHPMailer\PHPMailer\PHPMailer(true);
         try {
-            //Server settings
-            $mail->SMTPDebug = 0;                                                       //  Enable verbose debug output
-            $mail->isSMTP();                                                            //  Send using SMTP
-            $mail->Host       = $this->smtpHost;                                        //  Set the SMTP server to send through
-            $mail->SMTPAuth   = !empty($this->smtpUsername);                            //  Enable SMTP authentication
-            $mail->Username   = $this->smtpUsername;                                    //  SMTP username
-            $mail->Password   = $this->smtpPassword;                                    //  SMTP password
-            $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;     //  Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-            $mail->Port       = $this->smtpPort;                                        //  TCP port to connect to
+            // Server settings
+            $mail->SMTPDebug = 0;                                                       // Enable verbose debug output
+            $mail->isSMTP();                                                            // Send using SMTP
+            $mail->Host       = $this->smtpHost;                                        // Set the SMTP server to send through
+            $mail->SMTPAuth   = !empty($this->smtpUsername);                            // Enable SMTP authentication
+            $mail->Username   = $this->smtpUsername;                                    // SMTP username
+            $mail->Password   = $this->smtpPassword;                                    // SMTP password
+            $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;     // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+            $mail->Port       = $this->smtpPort;                                        // TCP port to connect to
 
-            //Recipients
+            // Recipients
             $mail->setFrom($this->from);
             $toAddresses = explode(',', $this->to);
             foreach ($toAddresses as $toAddress) {
@@ -111,4 +111,5 @@ class EmailSender {
             throw new Exception('Error sending email: ' . $mail->ErrorInfo);
         }
     }
+    
 }
